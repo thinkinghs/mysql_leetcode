@@ -12,3 +12,14 @@ select
         order by Salary desc
         limit 1 offset 1), null)
         AS SecondHighestSalary
+
+
+# 만약 아래처럼 할 경우 second highest salary가 없을 경우 아무것도 return하지 않음(row가 1개이거나, salary값이 다 같거나)
+# 문제에서 second highest salary가 없을 경우 null을 return하라고 했으므로 위와 같은 작업 
+
+SELECT DISTINCT
+    Salary AS SecondHighestSalary
+FROM
+    Employee
+ORDER BY Salary DESC
+LIMIT 1 OFFSET 1
