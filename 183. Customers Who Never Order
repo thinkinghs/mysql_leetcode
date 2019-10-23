@@ -1,0 +1,11 @@
+# https://leetcode.com/problems/customers-who-never-order/solution/
+
+# 다른 테이블의 record에 없는 값을 추출하고자 한다면, 다른 테이블에서 확인하고 싶은 attribute를 SELCT 한 값을 사용해야 함.
+# 다른 테이블을 그냥 쿼리문에 From으로 넣어버리면 테이블이 합쳐져버려서 원하는 결과 못 
+
+SELECT Customers.name AS 'Customers'
+FROM Customers
+WHERE Customers.Id NOT IN
+(
+    SELECT CustomerID FROM Orders
+)
