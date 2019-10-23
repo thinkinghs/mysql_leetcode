@@ -1,5 +1,7 @@
 # https://leetcode.com/problems/duplicate-emails/solution/
 
+# HAVING은 GROUP BY의 조건절. GROUP BY의 WHERE와 같다고 봐도 됨.
+# GROUP BY는 보통 집합 함수(aggregate function) AVG, SUM, COUNT 등과 같이 쓰임.
 SELECT Email FROM Person
 GROUP BY Email
 HAVING COUNT(Email) > 1
