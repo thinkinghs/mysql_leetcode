@@ -1,0 +1,6 @@
+# https://leetcode.com/problems/delete-duplicate-emails/solution/
+
+# DELETE 구문 익히기
+
+DELETE p1 FROM Person p1, Person p2
+WHERE p1.Email = p2.Email and p1.Id > p2.Id
