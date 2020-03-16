@@ -2,7 +2,7 @@
 
 # 내부 select 문을 ()로 감싸줘야 함.
 # IFNULL은 IFNULL(필드명, 대체할 값) 에서 필드명이 NULL일 때 대체할 값을 return해줌
-# 외부 select문에 from 없어도, 내부 select문에서 나열되는 값이 SecondHighestSalary라는 별명(테이블 이름처럼)으로 return됨
+# 외부 select문에 from 없어도, 내부 select문에서 나열되는 값이 SecondHighestSalary라는 별명(테이블 이름처럼)으로 return됨 -> 조심해야됨 subquery에서 return하는 값이 row가 1개일 때만 이렇게 쓸 수 있음. 일종의 트릭임. select 100; 이라고 하면 그냥 100이라고 표시됨.
 # limit은 몇개까지 출력할지 정함
 # offset은 몇번째부터 출력할지 정함. count는 0부터 시작
 
