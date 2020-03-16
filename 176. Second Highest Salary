@@ -23,3 +23,14 @@ FROM
     Employee
 ORDER BY Salary DESC
 LIMIT 1 OFFSET 1
+
+# 아래와 같이 해결할 수 있는데 위에 적어놨던 주의점(아래 다시 적음) 반드시 명심해야 됨.
+# 외부 select문에 from 없어도, 내부 select문에서 나열되는 값이 SecondHighestSalary라는 별명(테이블 이름처럼)으로 return됨 -> 조심해야됨 subquery에서 return하는 값이 row가 1개일 때만 이렇게 쓸 수 있음. 일종의 트릭임. select 100; 이라고 하면 그냥 100이라고 표시됨.
+SELECT
+    (SELECT DISTINCT
+            Salary
+        FROM
+            Employee
+        ORDER BY Salary DESC
+        LIMIT 1 OFFSET 1) AS SecondHighestSalary
+;
