@@ -9,3 +9,10 @@ WHERE Customers.Id NOT IN
 (
     SELECT CustomerID FROM Orders
 )
+
+# 아래처럼 NOT IN 안 쓰고 가능
+SELECT Name AS 'Customers'
+FROM Customers c
+LEFT JOIN Orders o
+ON c.Id = o.CustomerId
+WHERE o.CustomerId IS NULL
